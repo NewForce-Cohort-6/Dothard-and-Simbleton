@@ -1,10 +1,8 @@
-import { businessList } from "./BusinessList.js";
-import { getBusinesses } from "./database.js";
+//By importing BusinessList and having this function expect a parameter of businessArray, it is able to reuse the same code in BusinessList to print the specific manufacturing businesses. 
 
-const businessArray = getBusinesses()
-const filteredManufacturingBusinesses = businessArray.filter(singleManufacturingBusiness => singleManufacturingBusiness.companyIndustry === "Manufacturing")
+import { BusinessList } from "./BusinessList.js";
 
-export const ManufacturingBusinesses = () => {
-
-   return businessList(filteredManufacturingBusinesses)
+export const ManufacturingBusinesses = (businessArrayParam) => {
+   const filteredManufacturingBusinesses = businessArrayParam.filter(singleManufacturingBusiness => singleManufacturingBusiness.companyIndustry === "Manufacturing")
+   return BusinessList(filteredManufacturingBusinesses)
 }

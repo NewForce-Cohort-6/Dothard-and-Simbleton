@@ -1,12 +1,14 @@
-export const businessList = (businessArrayParam) => {
+// I have made this code reusable by having the function expect an argument of the business array. I can now utilize this exact function in NY business, Manufacturing Business, and the Search modules
+
+export const BusinessList = (businessArrayParam) => {
     let businessListHTML = ""
 
     //loop through the businesses array with a forEach.
     businessArrayParam.forEach((singleBusinessObj) => {
         businessListHTML += `
             <section class="business">
-                <h2 class="business--name">
-                ${singleBusinessObj.companyName}</h2>
+                <h3 class="business--name">
+                ${singleBusinessObj.companyName}</h3>
                 <div class="business--address">
                 ${singleBusinessObj.addressFullStreet}<br>
                 ${singleBusinessObj.addressCity}, ${singleBusinessObj.addressStateCode} ${singleBusinessObj.addressZipCode}
@@ -15,3 +17,6 @@ export const businessList = (businessArrayParam) => {
     return businessListHTML
 }
 
+   
+
+    

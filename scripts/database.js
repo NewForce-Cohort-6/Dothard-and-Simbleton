@@ -144,3 +144,5 @@ const database = {
   }
 
   export const getBusinesses = () => database.businesses.map(copySingleBusinessObject => ({...copySingleBusinessObject}))
+
+
